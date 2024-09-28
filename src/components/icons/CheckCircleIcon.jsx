@@ -1,5 +1,5 @@
 const CheckCircleIcon = props => (
-	<svg fill='none' viewBox='0 0 24 24' height='1em' width='1em' {...props}>
+	<svg {...props} fill='none' viewBox='0 0 24 24' height='1em' width='1em'>
 		<path
 			fill='currentColor'
 			d='M10.243 16.314L6 12.07l1.414-1.414 2.829 2.828 5.656-5.657 1.415 1.415-7.071 7.07z'

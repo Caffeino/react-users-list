@@ -1,5 +1,5 @@
 const CrossCircleIcon = props => (
-	<svg fill='none' viewBox='0 0 24 24' height='1em' width='1em' {...props}>
+	<svg {...props} fill='none' viewBox='0 0 24 24' height='1em' width='1em'>
 		<path
 			fill='currentColor'
 			d='M16.34 9.322a1 1 0 10-1.364-1.463l-2.926 2.728L9.322 7.66A1 1 0 007.86 9.024l2.728 2.926-2.927 2.728a1 1 0 101.364 1.462l2.926-2.727 2.728 2.926a1 1 0 101.462-1.363l-2.727-2.926 2.926-2.728z'
