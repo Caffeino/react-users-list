@@ -1,3 +1,4 @@
+import { SORT_OPTIONS } from '../constants/sortOptions';
 import InputCheckbox from './forms/InputCheckbox';
 import InputSearch from './forms/InputSearch';
 import Select from './forms/Select';
@@ -22,10 +23,10 @@ const UsersListFilters = ({
 				value={sortBy}
 				onChange={ev => setSortBy(Number(ev.target.value))}
 			>
-				<option value={0}>By Default</option>
-				<option value={1}>By Name</option>
-				<option value={2}>By Role</option>
-				{!onlyActive && <option value={3}>By Active</option>}
+				<option value={SORT_OPTIONS.DEFAULT}>By Default</option>
+				<option value={SORT_OPTIONS.NAME}>By Name</option>
+				<option value={SORT_OPTIONS.ROLE}>By Role</option>
+				{!onlyActive && <option value={SORT_OPTIONS.ACTIVE}>By Active</option>}
 			</Select>
 		</div>
 		<div className={style.row}>

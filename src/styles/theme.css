@@ -8,6 +8,7 @@
 	--color-lightgray: #cfcfcf;
 	--color-black: #000000;
 	--color-white: #ffffff;
+	--color-lightviolet: #ffe5ff;
 	/* Shadows */
 	--shadow-sm: 0px 0px 8px rgb(69, 69, 69, 0.3);
 	--shadow-md: 0px 0px 12px rgb(69, 69, 69, 0.5);
