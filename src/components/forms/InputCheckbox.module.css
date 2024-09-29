@@ -15,6 +15,7 @@
 	width: 2rem;
 	border-radius: var(--radius-sm);
 	box-shadow: var(--shadow-sm);
+	background-color: white;
 }
 
 .label:focus-within {

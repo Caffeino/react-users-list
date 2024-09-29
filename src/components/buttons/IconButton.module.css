@@ -1,0 +1,58 @@
+.button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 2.5rem;
+	height: 2.5rem;
+
+	border: none;
+	outline: none;
+	border-radius: 50%;
+}
+
+.button:disabled {
+	cursor: default;
+}
+
+.icon {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+.lime {
+	color: var(--color-lime);
+}
+
+.limeFilled {
+	background-color: var(--color-lime);
+}
+
+.violet {
+	color: var(--color-violet);
+}
+
+.violetFilled {
+	background-color: var(--color-violet);
+}
+
+.lime,
+.violet {
+	background-color: transparent;
+}
+
+.lime:disabled,
+.violet:disabled {
+	color: var(--color-lightgray);
+}
+
+.limeFilled,
+.violetFilled {
+	color: white;
+}
+
+.limeFilled:disabled,
+.violetFilled:disabled {
+	background-color: var(--color-lightgray);
+}
