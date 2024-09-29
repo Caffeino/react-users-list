@@ -3,16 +3,23 @@
 	font-size: var(--text-sm);
 	padding: 0.25rem 0.5rem;
 	border-radius: var(--radius-sm);
+	border: 1px solid;
 }
 
 .teacher {
 	background-color: var(--color-blue);
+	border-color: var(--color-white);
+	color: var(--color-white);
 }
 
 .student {
 	background-color: var(--color-purple);
+	border-color: var(--color-white);
+	color: var(--color-white);
 }
 
 .other {
 	background-color: var(--color-lightviolet);
+	border-color: var(--color-white);
+	color: var(--color-white);
 }

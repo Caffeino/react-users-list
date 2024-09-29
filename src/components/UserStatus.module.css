@@ -1,9 +1,9 @@
 .active {
-	color: var(--color-green);
+	color: var(--color-lime);
 }
 
 .inactive {
-	color: var(--color-red);
+	color: var(--color-lightred);
 }
 
 .active,

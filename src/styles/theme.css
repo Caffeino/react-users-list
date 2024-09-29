@@ -1,8 +1,9 @@
 :root {
 	/* Colores */
-	--color-blue: #a0ebff;
-	--color-purple: #dbceff;
+	--color-blue: #7bd6f0;
+	--color-purple: #c7b5f8;
 	--color-red: #ce3131;
+	--color-lightred: #f56262;
 	--color-green: #13b176;
 	--color-lime: #26db99;
 	--color-gray: #454545;
@@ -10,10 +11,10 @@
 	--color-black: #000000;
 	--color-white: #ffffff;
 	--color-violet: #ee82ee;
-	--color-lightviolet: #ffe5ff;
+	--color-lightviolet: #f5b2f5;
 	/* Shadows */
-	--shadow-sm: 0px 0px 8px rgb(69, 69, 69, 0.3);
-	--shadow-md: 0px 0px 12px rgb(69, 69, 69, 0.5);
+	--shadow-sm: 1px 1px 4px rgba(28, 44, 99, 0.3);
+	--shadow-md: 1px 1px 8px rgba(28, 44, 99, 0.4);
 	/* Border-radius */
 	--radius-sm: 0.5rem;
 	--radius-md: 1rem;
