@@ -20,7 +20,7 @@
 .primary {
 	color: var(--color-white);
 	background-color: var(--color-lime);
-	border-color: var(--color-white);
+	border-color: var(--color-lime);
 }
 
 .secondary {

@@ -16,7 +16,7 @@ const fetchUsers = async (setData, setError, signal) => {
 		} else {
 			setError();
 		}
-	} catch (err) {
+	} catch {
 		setError();
 	}
 };
