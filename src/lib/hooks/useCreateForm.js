@@ -1,32 +1,6 @@
 import { useEffect, useState } from 'react';
+import { findUserByUsername } from '../api/usersApi';
 import { validateName, validateUsername } from '../users/userValidation';
-
-const validateUsernameIsAvailable = async (
-	username,
-	setUsernameError,
-	signal
-) => {
-	let error;
-
-	try {
-		const res = await fetch(
-			`http://localhost:4000/users?username=${username}`,
-			{ signal }
-		);
-
-		if (res.ok) {
-			const data = await res.json();
-			if (data.length) error = 'User not available';
-		} else {
-			error = 'Validation error';
-		}
-	} catch (err) {
-		if (err.name === 'AbortError') return;
-		error = 'Validation error';
-	}
-
-	setUsernameError(error);
-};
 
 export const useCreateForm = () => {
 	const [formValues, setFormValues] = useState({
@@ -69,25 +43,45 @@ export const useCreateForm = () => {
 		}));
 
 	useEffect(() => {
-		if (formValues.username.loading) {
-			const controller = new AbortController();
+		if (!formValues.username.loading) return;
 
-			const timeoutId = setTimeout(
-				() =>
-					validateUsernameIsAvailable(
-						formValues.username.value,
-						setUsernameError,
-						controller.signal
-					),
-				500
-			);
+		const controller = new AbortController();
 
-			return () => {
-				controller.abort();
-				clearTimeout(timeoutId);
-			};
-		}
+		const timeoutId = setTimeout(
+			() =>
+				validateUsernameIsAvailable(
+					formValues.username.value,
+					setUsernameError,
+					controller.signal
+				),
+			500
+		);
+
+		return () => {
+			controller.abort();
+			clearTimeout(timeoutId);
+		};
 	}, [formValues.username.value, formValues.username.loading]);
 
-	return { ...formValues, setName, setUsername };
+	const isFormValid =
+		!formValues.name.value ||
+		formValues.name.error ||
+		!formValues.username.value ||
+		formValues.username.error ||
+		formValues.username.loading;
+
+	return { ...formValues, setName, setUsername, isFormValid };
+};
+
+const validateUsernameIsAvailable = async (
+	username,
+	setUsernameError,
+	signal
+) => {
+	const { user, error, aborted } = await findUserByUsername(username, signal);
+
+	if (aborted) return;
+	if (error) return setUsernameError('Validation error');
+
+	setUsernameError(user ? 'User not available' : undefined);
 };
