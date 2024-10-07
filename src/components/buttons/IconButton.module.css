@@ -37,22 +37,34 @@
 	background-color: var(--color-violet);
 }
 
+.red {
+	color: var(--color-lightred);
+}
+
+.redFilled {
+	background-color: var(--color-lightred);
+}
+
 .lime,
-.violet {
+.violet,
+.red {
 	background-color: transparent;
 }
 
 .lime:disabled,
-.violet:disabled {
+.violet:disabled,
+.red:disabled {
 	color: var(--color-lightgray);
 }
 
 .limeFilled,
-.violetFilled {
+.violetFilled,
+.redFilled {
 	color: white;
 }
 
 .limeFilled:disabled,
-.violetFilled:disabled {
+.violetFilled:disabled,
+.redFilled:disabled {
 	background-color: var(--color-lightgray);
 }

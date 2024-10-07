@@ -28,3 +28,9 @@
 	background-color: var(--color-white);
 	border-color: var(--color-lime);
 }
+
+.danger {
+	color: var(--color-white);
+	background-color: var(--color-lightred);
+	border-color: var(--color-lightred);
+}

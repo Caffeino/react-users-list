@@ -2,7 +2,8 @@ import style from './Button.module.css';
 
 const KIND_CLASSNAME = {
 	primary: style.primary,
-	secondary: style.secondary
+	secondary: style.secondary,
+	danger: style.danger
 };
 
 const Button = ({ kind = 'primary', className, ...props }) => (

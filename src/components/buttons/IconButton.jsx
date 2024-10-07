@@ -8,6 +8,10 @@ const CLASSNAMES = {
 	violet: {
 		normal: style.violet,
 		filled: style.violetFilled
+	},
+	red: {
+		normal: style.red,
+		filled: style.redFilled
 	}
 };
 
