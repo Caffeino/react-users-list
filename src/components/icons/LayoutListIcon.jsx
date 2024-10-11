@@ -1,0 +1,10 @@
+const LayoutListIcon = props => (
+	<svg {...props} fill='none' viewBox='0 0 24 24' height='1em' width='1em'>
+		<path
+			fill='currentColor'
+			d='M9 7H7v2h2V7zM7 13v-2h2v2H7zM7 15v2h2v-2H7zM11 15v2h6v-2h-6zM17 13v-2h-6v2h6zM17 7v2h-6V7h6z'
+		/>
+	</svg>
+);
+
+export default LayoutListIcon;
