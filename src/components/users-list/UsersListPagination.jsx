@@ -17,13 +17,10 @@ const UsersListPagination = ({
 				onChange={ev => setItemsPerPage(Number(ev.target.value))}
 			>
 				{PAGINATION.ITEMS_PER_PAGE_VALUES.map(value => (
-					<optione key={value} value={value}>
+					<option key={value} value={value}>
 						{value}
-					</optione>
+					</option>
 				))}
-				<option value={4}>4</option>
-				<option value={6}>6</option>
-				<option value={8}>8</option>
 			</Select>
 			<p>Items per page</p>
 		</div>
