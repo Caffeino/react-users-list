@@ -12,8 +12,12 @@
 	color: var(--color-lightgray);
 }
 
-.wrapper button:disabled > .icon {
+.wrapper button:disabled .icon {
 	color: var(--color-blue);
+}
+
+.wrapper button:focus .icon {
+	outline: 1px solid var(--color-blue);
 }
 
 .divider {
