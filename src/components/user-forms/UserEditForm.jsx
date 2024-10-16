@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { EDIT_FORM_ACTIONS } from '../../constants/editFormActions';
 import { USER_ROLES } from '../../constants/userRoles';
 import { updateUser } from '../../lib/api/usersApi';
 import { UserFormsContex } from '../../lib/context/UserFormsContex';
@@ -44,7 +45,7 @@ const UserEditForm = () => {
 					value={name.value}
 					onChange={ev =>
 						dispatchFormValues({
-							type: 'name_changed',
+							type: EDIT_FORM_ACTIONS.NAME,
 							value: ev.target.value
 						})
 					}
@@ -63,7 +64,7 @@ const UserEditForm = () => {
 					value={username.value}
 					onChange={ev =>
 						dispatchFormValues({
-							type: 'username_changed',
+							type: EDIT_FORM_ACTIONS.USERNAME,
 							value: ev.target.value,
 							currentUsername: currentUser.username
 						})
@@ -74,7 +75,10 @@ const UserEditForm = () => {
 				<Select
 					value={role}
 					onChange={ev =>
-						dispatchFormValues({ type: 'role_changed', value: ev.target.value })
+						dispatchFormValues({
+							type: EDIT_FORM_ACTIONS.ROLE,
+							value: ev.target.value
+						})
 					}
 				>
 					<option value={USER_ROLES.TEACHER}>Teacher</option>
@@ -86,7 +90,7 @@ const UserEditForm = () => {
 						checked={active}
 						onChange={ev =>
 							dispatchFormValues({
-								type: 'active_changed',
+								type: EDIT_FORM_ACTIONS.ACTIVE,
 								value: ev.target.checked
 							})
 						}
