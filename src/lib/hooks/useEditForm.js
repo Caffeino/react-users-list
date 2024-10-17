@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import { EDIT_FORM_ACTIONS } from '../../constants/editFormActions';
+import { replace, usernameErrorChanged } from '../actions/editFormActions';
 import { findUserByUsername } from '../api/usersApi';
 import {
 	editFormReducer,
@@ -14,10 +14,7 @@ export const useEditForm = user => {
 	);
 
 	useEffect(() => {
-		dispatchFormValues({
-			type: EDIT_FORM_ACTIONS.REPLACE,
-			value: getEditFormInitialState(user)
-		});
+		dispatchFormValues(replace(getEditFormInitialState(user)));
 	}, [user]);
 
 	useEffect(() => {
@@ -68,14 +65,11 @@ const validateUsernameIsAvailable = async (
 	const { user, error, aborted } = await findUserByUsername(username, signal);
 
 	if (aborted) return;
-	if (error)
-		return dispatchFormValues({
-			type: EDIT_FORM_ACTIONS.USERNAME_ERROR,
-			value: 'Validation error'
-		});
 
-	dispatchFormValues({
-		type: EDIT_FORM_ACTIONS.USERNAME_ERROR,
-		value: user ? 'User not available' : undefined
-	});
+	let errorMessage;
+
+	if (error) errorMessage = 'Validation error';
+	else if (user) errorMessage = 'User not available';
+
+	dispatchFormValues(usernameErrorChanged(errorMessage));
 };

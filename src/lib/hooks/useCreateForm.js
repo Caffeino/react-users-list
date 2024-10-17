@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import { CREATE_FORM_ACTIONS } from '../../constants/createFormActions';
+import { usernameErrorChanged } from '../actions/createFormActions';
 import { findUserByUsername } from '../api/usersApi';
 import {
 	CREATE_FORM_INITIAL_STATE,
@@ -51,14 +51,11 @@ const validateUsernameIsAvailable = async (
 	const { user, error, aborted } = await findUserByUsername(username, signal);
 
 	if (aborted) return;
-	if (error)
-		return dispatchFormValues({
-			type: CREATE_FORM_ACTIONS.USERNAME_ERROR,
-			value: 'Validation error'
-		});
 
-	dispatchFormValues({
-		type: CREATE_FORM_ACTIONS.USERNAME_ERROR,
-		value: user ? 'User not available' : undefined
-	});
+	let errorMessage;
+
+	if (error) errorMessage = 'Validation error';
+	else if (user) errorMessage = 'User not available';
+
+	dispatchFormValues(usernameErrorChanged(errorMessage));
 };

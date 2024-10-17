@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react';
-import { FILTERS_ACTIONS } from '../../constants/filtersActions';
+import { reset } from '../../lib/actions/filtersActions';
 import { useUsers } from '../../lib/hooks/useUsers';
 import {
 	FILTERS_INITIAL_STATE,
@@ -26,9 +26,7 @@ const UsersList = () => {
 	return (
 		<div className={style.wrapper}>
 			<h1 className={style.title}>List Of Users With React JS...</h1>
-			<UserFormsProvider
-				resetFilters={() => dispatchFilters({ type: FILTERS_ACTIONS.RESET })}
-			>
+			<UserFormsProvider resetFilters={() => dispatchFilters(reset())}>
 				<UsersListFilters
 					search={filters.search}
 					onlyActive={filters.onlyActive}
