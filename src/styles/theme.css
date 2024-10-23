@@ -12,7 +12,7 @@
 	--color-white: #ffffff;
 	--color-violet: #ee82ee;
 	--color-lightviolet: #f5b2f5;
-	/* Shadows */
+	--color-overlay: #000000b3; /* Shadows */
 	--shadow-sm: 1px 1px 4px rgba(28, 44, 99, 0.3);
 	--shadow-md: 1px 1px 8px rgba(28, 44, 99, 0.4);
 	/* Border-radius */
