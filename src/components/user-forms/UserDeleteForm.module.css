@@ -1,14 +1,6 @@
-.row {
+.form {
 	display: flex;
-	justify-content: flex-end;
-}
+	flex-direction: column;
 
-.text {
-	margin-bottom: 2rem;
-}
-
-.btnGroup {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 }
