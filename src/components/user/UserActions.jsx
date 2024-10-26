@@ -19,7 +19,11 @@ const UserActions = ({ user }) => {
 	return (
 		<div className={style.wrapper}>
 			<Modal closeModal={closeModal}>{modalContent}</Modal>
-			<IconButton icon={MoreVerticalAltIcon} onClick={openDropdown} />
+			<IconButton
+				kind={'violet'}
+				icon={MoreVerticalAltIcon}
+				onClick={openDropdown}
+			/>
 
 			{dropdownOpened && (
 				<ul
